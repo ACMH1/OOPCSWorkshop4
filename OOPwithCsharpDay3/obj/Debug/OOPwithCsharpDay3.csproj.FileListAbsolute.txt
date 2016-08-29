@@ -1,0 +1,6 @@
+c:\users\user\documents\visual studio 2015\Projects\OOPwithCsharpDay3\OOPwithCsharpDay3\bin\Debug\OOPwithCsharpDay3.exe.config
+c:\users\user\documents\visual studio 2015\Projects\OOPwithCsharpDay3\OOPwithCsharpDay3\obj\Debug\OOPwithCsharpDay3.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2015\Projects\OOPwithCsharpDay3\OOPwithCsharpDay3\bin\Debug\OOPwithCsharpDay3.exe
+c:\users\user\documents\visual studio 2015\Projects\OOPwithCsharpDay3\OOPwithCsharpDay3\bin\Debug\OOPwithCsharpDay3.pdb
+c:\users\user\documents\visual studio 2015\Projects\OOPwithCsharpDay3\OOPwithCsharpDay3\obj\Debug\OOPwithCsharpDay3.exe
+c:\users\user\documents\visual studio 2015\Projects\OOPwithCsharpDay3\OOPwithCsharpDay3\obj\Debug\OOPwithCsharpDay3.pdb
