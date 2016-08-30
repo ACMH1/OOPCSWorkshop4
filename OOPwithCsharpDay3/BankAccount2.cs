@@ -10,24 +10,21 @@ namespace OOPwithCsharpDay3
         //Constructors
         public BankAccount() : this("", "", 0)
         { }
-        public BankAccount(string AccountNumber, string AccountName, double AccountBalance)
+        public BankAccount(string AccountNumber, string AccountName, double AccountBalance) : this(AccountNumber, new Customer(AccountName), AccountBalance)
+        { }
+        public BankAccount(string AccountNumber, string AccountName, double AccountBalance, double InterestRate) : this(AccountNumber, new Customer(AccountName), AccountBalance, InterestRate)
+        { }
+        public BankAccount(string AccountNumber, Customer Customer, double AccountBalance) : base(AccountNumber, Customer, AccountBalance)
         {
-            this.AccountNumber = AccountNumber;
-            this.AccountName = AccountName;
-            this.AccountBalance = AccountBalance;
             InterestRate = 0;
         }
-        public BankAccount(string AccountNumber, string AccountName, double AccountBalance, double InterestRate) : this(AccountNumber, AccountName, AccountBalance)
+        public BankAccount(string AccountNumber, Customer Customer, double AccountBalance, double InterestRate) : this(AccountNumber, Customer, AccountBalance)
         {
             this.InterestRate = InterestRate;
         }
-        public BankAccount(string AccountNumber, Customer Customer, double AccountBalance) : this(AccountNumber, Customer.Name, AccountBalance)
-        { }
-        public BankAccount(string AccountNumber, Customer Customer, double AccountBalance, double InterestRate) : this(AccountNumber, Customer.Name, AccountBalance, InterestRate)
-        { }
 
         //Methods
-        public double CalculateInterest()
+        public virtual double CalculateInterest()
         {
             //Console.WriteLine("{0:c}, {1}", AccountBalance, InterestRate);
             return AccountBalance * InterestRate / 100;

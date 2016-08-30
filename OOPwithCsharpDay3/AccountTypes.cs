@@ -6,7 +6,7 @@ namespace OOPwithCsharpDay3
     {
         public SavingsAccount(string AccountNumber, string AccountName, double AccountBalance) : base(AccountNumber, AccountName, AccountBalance, 1)
         { }
-        public SavingsAccount(string AccountNumber, Customer Customer, double AccountBalance) : this(AccountNumber, Customer.Name, AccountBalance)
+        public SavingsAccount(string AccountNumber, Customer Customer, double AccountBalance) : base(AccountNumber, Customer, AccountBalance, 1)
         { }
     }
 
@@ -14,7 +14,7 @@ namespace OOPwithCsharpDay3
     {
         public CurrentAccount(string AccountNumber, string AccountName, double AccountBalance) : base(AccountNumber, AccountName, AccountBalance, 0.25)
         { }
-        public CurrentAccount(string AccountNumber, Customer Customer, double AccountBalance) : this(AccountNumber, Customer.Name, AccountBalance)
+        public CurrentAccount(string AccountNumber, Customer Customer, double AccountBalance) : base(AccountNumber, Customer, AccountBalance, 0.25)
         { }
     }
 
@@ -22,9 +22,14 @@ namespace OOPwithCsharpDay3
     {
         public OverDraftAccount(string AccountNumber, string AccountName, double AccountBalance) : base(AccountNumber, AccountName, AccountBalance)
         { }
-        public OverDraftAccount(string AccountNumber, Customer Customer, double AccountBalance) : this(AccountNumber, Customer.Name, AccountBalance)
+        public OverDraftAccount(string AccountNumber, Customer Customer, double AccountBalance) : base(AccountNumber, Customer, AccountBalance)
         { }
-        public new double CalculateInterest()
+        public override void Withdraw(double amount)
+        {
+            AccountBalance -= amount;
+            Console.WriteLine("{0}\t{1}\t-{2:c}\t{3:c}.", Customer.Name, AccountNumber, amount, AccountBalance);
+        }
+        public override double CalculateInterest()
         {
             if (AccountBalance < 0)
                 InterestRate = 6;
@@ -32,11 +37,11 @@ namespace OOPwithCsharpDay3
                 InterestRate = 0.25;
             return AccountBalance * InterestRate / 100;
         }
-        public new void CreditInterest()//why doesn't the old CreditInterest Reference the new CalculateInterest? Is there a way to make it do that?
-        {
-            double Interest = CalculateInterest();
-            Deposit(Interest);
-            //Console.WriteLine("{0}\t{1}\t{2:c}\t{3:c}.", AccountName, AccountNumber, Interest, AccountBalance);
-        }
+        //public void CreditInterest()//why doesn't the old CreditInterest Reference the new CalculateInterest? Is there a way to make it do that?
+        //{
+        //    double Interest = CalculateInterest();
+        //    Deposit(Interest);
+        //    //Console.WriteLine("{0}\t{1}\t{2:c}\t{3:c}.", AccountName, AccountNumber, Interest, AccountBalance);
+        //}
     }
 }

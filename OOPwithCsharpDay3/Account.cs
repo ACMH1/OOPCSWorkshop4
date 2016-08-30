@@ -6,28 +6,32 @@ namespace OOPwithCsharpDay3
     {
         //Attributes
         protected string AccountNumber;
-        protected string AccountName;
+        protected Customer Customer;
         protected double AccountBalance;
 
         //Constructors
         public Account() : this("", "", 0)
         { }
-        public Account(string AccountNumber, string AccountName, double AccountBalance)
+        public Account(string AccountNumber, string AccountName, double AccountBalance) : this(AccountNumber, new Customer(AccountName), AccountBalance)
         {
             this.AccountNumber = AccountNumber;
-            this.AccountName = AccountName;
+            this.Customer = new Customer(AccountName);
             this.AccountBalance = AccountBalance;
         }
-        public Account(string AccountNumber, Customer Customer, double AccountBalance) : this(AccountNumber, Customer.Name, AccountBalance)
-        { }
+        public Account(string AccountNumber, Customer Customer, double AccountBalance)
+        {
+            this.AccountNumber = AccountNumber;
+            this.Customer = Customer;
+            this.AccountBalance = AccountBalance;
+        }
 
         //Methods
-        public void Withdraw(double amount)
+        public virtual void Withdraw(double amount)
         {
             if (AccountBalance >= amount)
             {
                 AccountBalance -= amount;
-                Console.WriteLine("{0}\t{1}\t-{2:c}\t{3:c}.", AccountName, AccountNumber, amount, AccountBalance);
+                Console.WriteLine("{0}\t{1}\t-{2:c}\t{3:c}.", Customer.Name, AccountNumber, amount, AccountBalance);
             }
             else
                 Console.WriteLine("Insufficient Funds.");
@@ -35,7 +39,7 @@ namespace OOPwithCsharpDay3
         public void Deposit(double amount)
         {
             AccountBalance += amount;
-            Console.WriteLine("{0}\t{1}\t{2:c}\t\t{3:c}.", AccountName, AccountNumber, amount, AccountBalance);
+            Console.WriteLine("{0}\t{1}\t{2:c}\t\t{3:c}.", Customer.Name, AccountNumber, amount, AccountBalance);
         }
         public void TransferTo(double amount, Account Another)
         {
@@ -43,22 +47,29 @@ namespace OOPwithCsharpDay3
             {
                 this.Withdraw(amount);
                 Another.Deposit(amount);
-                //Console.WriteLine("Transferred {0:c} from {1} to {2}", amount, AccountName, Another.Name);
+                //Console.WriteLine("Transferred {0:c} from {1} to {2}", amount, Customer.Name, Another.Name);
             }
             else
                 Console.WriteLine("Insufficient Funds.");
         }
         public string Show()
         {
-            return String.Format("{0}\t{1}\t\t\t{2:c}.", AccountName, AccountNumber, AccountBalance);
+            return String.Format("{0}\t{1}\t\t\t{2:c}.", Customer.Name, AccountNumber, AccountBalance);
         }
 
         //Properties
+        public string AccountNo
+        {
+            get
+            {
+                return AccountNumber;
+            }
+        }
         public string Name
         {
             get
             {
-                return AccountName;
+                return Customer.Name;
             }
         }
         public double Balance

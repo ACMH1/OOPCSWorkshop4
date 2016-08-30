@@ -46,6 +46,7 @@
     <Compile Include="Account.cs" />
     <Compile Include="AccountTypes.cs" />
     <Compile Include="BankAccount2.cs" />
+    <Compile Include="BankBranch.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

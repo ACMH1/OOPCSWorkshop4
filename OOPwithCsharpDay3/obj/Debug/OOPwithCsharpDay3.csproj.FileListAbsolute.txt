@@ -7,3 +7,9 @@ c:\users\user\documents\visual studio 2015\Projects\OOPwithCsharpDay3\OOPwithCsh
 C:\Users\User\Source\Repos\OOPCSWorkshop42\OOPwithCsharpDay3\bin\Debug\OOPwithCsharpDay3.exe.config
 C:\Users\User\Source\Repos\OOPCSWorkshop42\OOPwithCsharpDay3\obj\Debug\OOPwithCsharpDay3.exe
 C:\Users\User\Source\Repos\OOPCSWorkshop42\OOPwithCsharpDay3\obj\Debug\OOPwithCsharpDay3.pdb
+C:\Users\Alex\Source\Repos\OOPCSWorkshop4\OOPwithCsharpDay3\bin\Debug\OOPwithCsharpDay3.exe.config
+C:\Users\Alex\Source\Repos\OOPCSWorkshop4\OOPwithCsharpDay3\obj\Debug\OOPwithCsharpDay3.exe
+C:\Users\Alex\Source\Repos\OOPCSWorkshop4\OOPwithCsharpDay3\obj\Debug\OOPwithCsharpDay3.pdb
+C:\Users\Alex\Source\Repos\OOPCSWorkshop4\OOPwithCsharpDay3\bin\Debug\OOPwithCsharpDay3.exe
+C:\Users\Alex\Source\Repos\OOPCSWorkshop4\OOPwithCsharpDay3\bin\Debug\OOPwithCsharpDay3.pdb
+C:\Users\Alex\Source\Repos\OOPCSWorkshop4\OOPwithCsharpDay3\obj\Debug\OOPwithCsharpDay3.csprojResolveAssemblyReference.cache

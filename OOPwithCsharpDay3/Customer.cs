@@ -7,8 +7,10 @@ namespace OOPwithCsharpDay3
         //attributes
         string CustomerName, CustomerAddress, PassportNumber;
         DateTime DateOfBirth;
-
+        
         //constructor
+        public Customer(string Name) : this(Name, "", "", DateTime.Now)
+        { }
         public Customer(string Name, string Address, string PassportNumber, DateTime DateOfBirth)
         {
             CustomerName = Name;
